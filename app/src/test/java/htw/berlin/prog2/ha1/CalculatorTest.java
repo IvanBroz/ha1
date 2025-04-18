@@ -124,7 +124,7 @@ class CalculatorTest {
     }
 
     @Test
-    @DisplayName("should throw show the given number")
+    @DisplayName("should display the given number")
     void testPressEqualsKey() {
         Calculator calc = new Calculator();
 
