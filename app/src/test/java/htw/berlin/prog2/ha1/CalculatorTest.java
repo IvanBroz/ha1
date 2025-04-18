@@ -90,5 +90,22 @@ class CalculatorTest {
 
 
     //TODO hier weitere Tests erstellen
-}
+    //Teilaufgabe 1: Schreiben Sie einen neuen zusätzlichen Test,
+    // der eine bisher nicht getestete Funktionalität abdeckt,
+    // die bereits funktioniert und der daher direkt grün wird.
+
+    @Test
+    @DisplayName(("should reset the calculator and show 0"))
+    void testClearKey() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(1);
+        calc.pressDigitKey(7);
+        calc.pressClearKey();
+
+        String expected = "0";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }}
 
