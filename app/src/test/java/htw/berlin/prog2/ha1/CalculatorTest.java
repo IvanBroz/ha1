@@ -95,7 +95,7 @@ class CalculatorTest {
     // die bereits funktioniert und der daher direkt grün wird.
 
     @Test
-    @DisplayName(("should reset the calculator and show 0"))
+    @DisplayName("should reset the calculator and show 0")
     void testClearKey() {
         Calculator calc = new Calculator();
 
@@ -107,5 +107,21 @@ class CalculatorTest {
         String actual = calc.readScreen();
 
         assertEquals(expected, actual);
-    }}
+    }
+
+    @Test
+    @DisplayName("should display error when inverting zero")
+    void testInversionOfZero() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(0);
+        calc.pressUnaryOperationKey("1/x");
+
+        String expected = "Error";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
+}
 
